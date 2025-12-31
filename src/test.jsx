@@ -28,8 +28,8 @@ export function ThreeDCardDemo({
                 alt={title}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-[#020617]/30 to-transparent" />
-              <div className="absolute top-4 right-4 rounded-xl border border-white/15 bg-white/10 p-3 backdrop-blur">
-                <BadgeIcon className="h-5 w-5 text-sky-300" />
+              <div className="absolute top-4 right-4 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+                <BadgeIcon className="h-5 w-5 text-slate-200" />
               </div>
             </div>
           </CardItem>

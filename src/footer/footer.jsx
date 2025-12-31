@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 border-t border-white/10 pt-6">
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="inline-flex items-center gap-3 text-slate-50">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-sky-400 to-indigo-600 text-base font-extrabold text-slate-900 shadow-[0_12px_24px_-16px_rgba(79,70,229,0.8)]">
+            <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-sm font-extrabold text-slate-100">
               EV
             </span>
             <span className="text-base font-semibold">Esteban Vargas</span>
