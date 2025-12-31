@@ -16,7 +16,7 @@ export function ThreeDCardDemo({
 
   return (
     <CardContainer className="inter-var">
-      <CardBody className="relative group/card rounded-2xl border border-white/10 bg-white/5 p-0 shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+      <CardBody className="relative group/card rounded-2xl border border-white/10 bg-white/5 p-0 shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)] overflow-hidden">
         <div className="flex flex-col h-full">
           <CardItem translateZ={80} className="relative">
             <div className="relative h-56 w-full overflow-hidden rounded-t-2xl">
@@ -24,7 +24,7 @@ export function ThreeDCardDemo({
                 src={image}
                 height={800}
                 width={1200}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover/card:scale-110"
+                className="h-full w-full object-cover transition-transform duration-700 md:group-hover/card:scale-110"
                 alt={title}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-[#020617]/30 to-transparent" />

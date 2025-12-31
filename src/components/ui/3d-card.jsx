@@ -16,8 +16,10 @@ export const CardContainer = ({
 }) => {
   const containerRef = useRef(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
+  const isFinePointer = useIsFinePointer();
 
   const handleMouseMove = (e) => {
+    if (!isFinePointer) return;
     if (!containerRef.current) return;
     const { left, top, width, height } =
       containerRef.current.getBoundingClientRect();
@@ -27,12 +29,14 @@ export const CardContainer = ({
   };
 
   const handleMouseEnter = (e) => {
+    if (!isFinePointer) return;
     setIsMouseEntered(true);
     if (!containerRef.current) return;
   };
 
   const handleMouseLeave = (e) => {
     if (!containerRef.current) return;
+    if (!isFinePointer) return;
     setIsMouseEntered(false);
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
   };
@@ -47,9 +51,9 @@ export const CardContainer = ({
       >
         <div
           ref={containerRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={isFinePointer ? handleMouseEnter : undefined}
+          onMouseMove={isFinePointer ? handleMouseMove : undefined}
+          onMouseLeave={isFinePointer ? handleMouseLeave : undefined}
           className={cn(
             "flex items-center justify-center relative transition-all duration-200 ease-linear",
             className
@@ -128,3 +132,18 @@ export const useMouseEnter = () => {
   }
   return context;
 };
+
+function useIsFinePointer() {
+  const [fine, setFine] = useState(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mql = window.matchMedia("(pointer: fine)");
+    const update = () => setFine(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  return fine;
+}
