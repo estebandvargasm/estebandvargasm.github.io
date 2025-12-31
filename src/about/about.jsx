@@ -1,5 +1,6 @@
 import React from "react";
 import { IconCode, IconBriefcase } from "@tabler/icons-react";
+import estebanPerfil from "../assets/esteban-perfil.png";
 import "./about.css";
 
 const About = () => {
@@ -54,7 +55,7 @@ const About = () => {
         </div>
 
         <div className="about-profile">
-          <img src="/esteban-perfil.png" alt="Esteban Vargas" className="about-avatar" />
+          <img src={estebanPerfil} alt="Esteban Vargas" className="about-avatar" />
           <h3 className="about-name">Esteban Vargas</h3>
           <p className="about-role">Frontend Developer</p>
           <div className="about-divider" />

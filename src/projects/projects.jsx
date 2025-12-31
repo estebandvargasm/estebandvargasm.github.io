@@ -1,13 +1,15 @@
 import React from "react";
 import "./projects.css";
 import { ThreeDCardDemo } from "../test.jsx";
+import mindSasBic from "../assets/MIND-SAS-BIC.png";
+import portfolio from "../assets/portfolio.png";
 
 const Projects = () => {
   const projects = [
     {
       title: "MIND SAS BIC",
       description: "This is the website of the company Mind SAS BIC, built with react.",
-      image: "/MIND-SAS-BIC.png",
+      image: mindSasBic,
       projectLink: "https://www.metalmindsa.com/",
       codeLink: "https://github.com/LuisDavidFajardoH/Mind",
       tags: ["React", "JavaScript"],
@@ -16,7 +18,7 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "A personal portfolio website showcasing my projects and skills, built with React.",
-      image: "/portfolio.png",
+      image: portfolio,
       projectLink: "#",
       codeLink: "#",
       tags: ["React", "JavaScript", "Tailwind"],
