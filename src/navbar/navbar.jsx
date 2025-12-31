@@ -57,8 +57,7 @@ export function FloatingDockDemo() {
   return (
     <div className="fixed bottom-6 left-0 right-0 z-50 flex items-center justify-center pointer-events-none">
       <FloatingDock
-        desktopClassName="pointer-events-auto"
-        mobileClassName="pointer-events-auto translate-y-20"
+        className="pointer-events-auto"
         items={links}
       />
     </div>
