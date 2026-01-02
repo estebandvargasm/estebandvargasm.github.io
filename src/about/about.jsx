@@ -14,7 +14,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden px-6 py-24 text-slate-100 sm:px-8"
+      className="relative overflow-hidden px-6 pt-48 pb-24 text-slate-100 sm:px-8"
     >
       <div
         aria-hidden

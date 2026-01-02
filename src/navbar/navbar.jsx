@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FloatingDock } from "../components/ui/floating-dock";
 import {
   IconHome,
@@ -10,46 +10,74 @@ import {
 } from "@tabler/icons-react";
 
 export function FloatingDockDemo() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sectionIds = ["home", "about", "projects"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.35,
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const links = [
     {
       title: "Home",
       icon: (
-        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconHome className="h-full w-full" />
       ),
-      href: "#",
+      href: "#home",
+      isActive: activeSection === "home",
     },
     {
       title: "About",
       icon: (
-        <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconUser className="h-full w-full" />
       ),
       href: "#about",
+      isActive: activeSection === "about",
     },
     {
       title: "Projects",
       icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconTerminal2 className="h-full w-full" />
       ),
       href: "#projects",
+      isActive: activeSection === "projects",
     },
     {
       title: "LinkedIn",
       icon: (
-        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandLinkedin className="h-full w-full" />
       ),
       href: "https://www.linkedin.com/in/esteban-david-vargas-medina/",
     },
     {
       title: "GitHub",
       icon: (
-        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandGithub className="h-full w-full" />
       ),
       href: "https://github.com/estebandvargasm",
     },
     {
       title: "Contact",
       icon: (
-        <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconMail className="h-full w-full" />
       ),
       href: "mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20increíble!",
     },

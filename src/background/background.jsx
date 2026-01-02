@@ -1,5 +1,6 @@
 import React from "react";
 import { BackgroundRippleEffect } from "../components/ui/background-ripple-effect";
+import CVPdf from "./Esteban Vargas.pdf";
 
 export function BackgroundRippleEffectDemo() {
   return (
@@ -40,6 +41,14 @@ export function BackgroundRippleEffectDemo() {
               className="rounded-xl border border-white/15 px-6 py-3 text-base font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/5"
             >
               About Me
+            </a>
+            <a
+              href={CVPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-white/15 px-6 py-3 text-base font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/5"
+            >
+              View CV
             </a>
           </div>
 

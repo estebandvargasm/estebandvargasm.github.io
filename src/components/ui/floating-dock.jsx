@@ -34,7 +34,8 @@ function IconContainer({
   mouseX,
   title,
   icon,
-  href
+  href,
+  isActive = false
 }) {
   const ref = useRef(null);
   const isFinePointer = useIsFinePointer();
@@ -65,7 +66,10 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={isFinePointer ? () => setHovered(true) : undefined}
         onMouseLeave={isFinePointer ? () => setHovered(false) : undefined}
-        className="relative flex aspect-square items-center justify-center rounded-full border border-white/10 bg-white/10 text-slate-200 transition hover:text-sky-300 hover:bg-white/15">
+        className={cn(
+          "relative flex aspect-square items-center justify-center rounded-full border border-white/10 bg-white/10 text-slate-200 transition hover:bg-white/15",
+          isActive && "border-transparent bg-white text-slate-900"
+        )}>
         <AnimatePresence>
           {hovered && isFinePointer && (
             <motion.div
@@ -80,7 +84,7 @@ function IconContainer({
         </AnimatePresence>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center">
+          className="flex items-center justify-center text-inherit">
           {icon}
         </motion.div>
       </motion.div>
