@@ -12,6 +12,14 @@ import {
 export function FloatingDockDemo() {
   const [activeSection, setActiveSection] = useState("home");
 
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  };
+
   useEffect(() => {
     const sectionIds = ["home", "about", "projects"];
     const observer = new IntersectionObserver(
@@ -42,6 +50,7 @@ export function FloatingDockDemo() {
         <IconHome className="h-full w-full" />
       ),
       href: "#home",
+      onClick: () => scrollToId("home"),
       isActive: activeSection === "home",
     },
     {
@@ -50,6 +59,7 @@ export function FloatingDockDemo() {
         <IconUser className="h-full w-full" />
       ),
       href: "#about",
+      onClick: () => scrollToId("about"),
       isActive: activeSection === "about",
     },
     {
@@ -58,6 +68,7 @@ export function FloatingDockDemo() {
         <IconTerminal2 className="h-full w-full" />
       ),
       href: "#projects",
+      onClick: () => scrollToId("projects"),
       isActive: activeSection === "projects",
     },
     {

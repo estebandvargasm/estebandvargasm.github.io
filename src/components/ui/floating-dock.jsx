@@ -35,6 +35,7 @@ function IconContainer({
   title,
   icon,
   href,
+  onClick,
   isActive = false
 }) {
   const ref = useRef(null);
@@ -57,10 +58,21 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
-  const isExternal = href.startsWith('http') || href.startsWith('mailto:');
+  const isExternal = href && (href.startsWith("http") || href.startsWith("mailto:"));
+  const handleClick = (event) => {
+    if (onClick) {
+      event.preventDefault();
+      onClick();
+    }
+  };
 
   return (
-    <a href={href} target={isExternal ? "_blank" : "_self"} rel={isExternal ? "noopener noreferrer" : undefined}>
+    <a
+      href={href || "#"}
+      onClick={handleClick}
+      target={isExternal ? "_blank" : "_self"}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+    >
       <motion.div
         ref={ref}
         style={{ width, height }}
