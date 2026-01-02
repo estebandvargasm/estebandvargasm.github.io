@@ -20,7 +20,7 @@ const Projects = () => {
       image: portfolio,
       projectLink: "https://estebandvargasm.github.io/portfolio/",
       codeLink: "https://github.com/estebandvargasm/portfolio",
-      tags: ["React", "JavaScript", "Tailwind CSS"],
+      tags: ["React", "JavaScript", "Tailwind"],
       icon: "web",
     },
   ];

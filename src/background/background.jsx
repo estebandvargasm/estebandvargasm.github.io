@@ -31,16 +31,10 @@ export function BackgroundRippleEffectDemo() {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#projects"
+              href="mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20incre%C3%ADble!"
               className="rounded-xl bg-sky-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/30 transition duration-200 hover:-translate-y-0.5 hover:bg-sky-400"
             >
-              View Projects
-            </a>
-            <a
-              href="#about"
-              className="rounded-xl border border-white/15 px-6 py-3 text-base font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/5"
-            >
-              About Me
+              Contact Me
             </a>
             <a
               href={CVPdf}
@@ -48,7 +42,7 @@ export function BackgroundRippleEffectDemo() {
               rel="noopener noreferrer"
               className="rounded-xl border border-white/15 px-6 py-3 text-base font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/5"
             >
-              View CV
+              Download CV
             </a>
           </div>
 

@@ -5,11 +5,11 @@ import estebanPerfil from "../assets/esteban-perfil.png";
 const About = () => {
 
   const stats = [
-    { label: "Projects", value: "2" },
+    { label: "Projects", value: "2+" },
     { label: "Technologies", value: "4" },
   ];
 
-  const stack = ["React.js", "React Native", "JavaScript", "Tailwind CSS"];
+  const stack = ["React.js", "React Native", "JavaScript", "Tailwind"];
 
   return (
     <section
