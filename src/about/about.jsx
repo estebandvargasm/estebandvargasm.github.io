@@ -9,7 +9,7 @@ const About = () => {
     { label: "Technologies", value: "4" },
   ];
 
-  const stack = ["React.js", "React Native", "JavaScript", "Tailwind"];
+  const stack = ["React.js", "React Native", "JavaScript", "Tailwind CSS"];
 
   return (
     <section
