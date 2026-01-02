@@ -20,6 +20,7 @@ const Footer = () => {
             <a
               href="mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20incre%C3%ADble!"
               aria-label="Email"
+              title="Email"
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition hover:-translate-y-0.5 hover:bg-white/10"
             >
               <IconMail className="h-5 w-5" />
@@ -28,6 +29,7 @@ const Footer = () => {
               href="https://github.com/estebandvargasm"
               target="_blank"
               aria-label="GitHub"
+              title="GitHub"
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition hover:-translate-y-0.5 hover:bg-white/10"
             >
               <IconBrandGithub className="h-5 w-5" />
@@ -36,6 +38,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/esteban-david-vargas-medina/"
               target="_blank"
               aria-label="LinkedIn"
+              title="LinkedIn"
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition hover:-translate-y-0.5 hover:bg-white/10"
             >
               <IconBrandLinkedin className="h-5 w-5" />
@@ -43,9 +46,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="w-full text-center text-sm text-slate-400">
+        {/*<p className="w-full text-center text-sm text-slate-400">
           © {new Date().getFullYear()} • Designed and developed with passion.
-        </p>
+        </p>*/}
       </div>
     </footer>
   );
