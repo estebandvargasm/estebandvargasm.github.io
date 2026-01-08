@@ -5,7 +5,7 @@ import estebanPerfil from "../assets/esteban-perfil.png";
 const About = () => {
 
   const stats = [
-    { label: "Projects", value: "2+" },
+    { label: "Projects", value: "3+" },
     { label: "Technologies", value: "4" },
   ];
 
