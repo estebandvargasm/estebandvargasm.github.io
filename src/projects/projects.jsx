@@ -1,14 +1,12 @@
 import React from "react";
 import { ThreeDCardDemo } from "../test.jsx";
-import mindSasBic from "../assets/MIND-SAS-BIC.png";
-import portfolio from "../assets/portfolio.png";
 
-const Projects = () => {
+function Projects() {
   const projects = [
     {
       title: "MIND SAS BIC",
       description: "Corporate site for Mind SAS BIC built in React with responsive layouts, clear service storytelling, and fast-loading media to improve lead capture.",
-      image: mindSasBic,
+      image: "/public/images/MIND-SAS-BIC.png",
       projectLink: "https://www.metalmindsa.com/",
       codeLink: "https://github.com/LuisDavidFajardoH/Mind",
       tags: ["React", "JavaScript"],
@@ -17,10 +15,19 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "Personal portfolio crafted with React and Tailwind CSS, featuring smooth scroll anchors, animated UI, and project cards that highlight tech stacks and links.",
-      image: portfolio,
+      image: "/public/images/portfolio.png",
       projectLink: "https://estebandvargasm.github.io/portfolio/",
       codeLink: "https://github.com/estebandvargasm/portfolio",
       tags: ["React", "JavaScript", "Tailwind"],
+      icon: "web",
+    },
+    {
+      title: "99 Envios",
+      description: "Version 2 redesign of 99 Envios landing page, featuring enhanced user experience with modern React architecture, improved navigation flow, and optimized performance to boost customer engagement.",
+      image: "/public/images/99envios.png",
+      projectLink: "https://v2.99envios.com/",
+      codeLink: "https://github.com/estebandvargasm/99envios.com",
+      tags: ["React", "JavaScript"],
       icon: "web",
     },
   ];
@@ -40,6 +47,6 @@ const Projects = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Projects;
