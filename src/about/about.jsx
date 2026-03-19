@@ -5,11 +5,24 @@ import estebanPerfil from "../assets/esteban-perfil.png";
 const About = () => {
 
   const stats = [
-    { label: "Projects", value: "3+" },
-    { label: "Technologies", value: "4" },
+    { label: "Projects", value: "5+" },
+    { label: "Technologies", value: "15+" },
   ];
 
-  const stack = ["React.js", "React Native", "JavaScript", "Tailwind"];
+  const stack = [
+    {
+      category: "Frontend & Mobile",
+      items: ["React Native", "React.js", "TypeScript", "JavaScript", "Tailwind", "Zustand", "Socket.io", "SEO"],
+    },
+    {
+      category: "Backend & Database",
+      items: ["Deno 2", "Node.js", "Hono", "PostgreSQL", "JWT"],
+    },
+    {
+      category: "DevOps & Cloud",
+      items: ["Firebase", "Google Maps API", "Play Console", "Cloud Console", "Docker", "Git"],
+    },
+  ];
 
   return (
     <section
@@ -27,22 +40,32 @@ const About = () => {
             About Me
           </p>
           <h2 className="text-3xl font-extrabold leading-tight text-slate-50 sm:text-4xl">
-            I build clean and functional digital experiences.
+            I architect scalable systems and craft premium interfaces.
           </h2>
           <p className="max-w-2xl text-base leading-relaxed text-slate-300">
-            I'm Esteban, a passionate frontend developer with a keen eye for design and a love for creating professional, user-friendly websites and applications.
+            I'm Esteban, a passionate Full Stack Engineer specializing in building robust applications that bridge the gap between high-performance backends and world-class user interfaces.
           </p>
           <p className="max-w-2xl text-base leading-relaxed text-slate-300">
-            My journey in web development began with a fascination for how technology can solve real-world problems. This drive led me to master a variety of tools and frameworks, always with the goal of delivering exceptional digital experiences. Whether it's building responsive layouts, optimizing performance, or implementing complex features, I approach each project with enthusiasm and attention to detail.
+            My journey has evolved from mastering frontend aesthetics to architecting scalable backend systems using Deno, Node.js, and PostgreSQL. Whether I'm building mobile experiences with React Native or optimizing server-side logic, I approach each project with a focus on clean code, performance, and real-world scalability.
           </p>
-          <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-sky-100">
-            {stack.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-white/15 bg-white/5 px-3 py-1 shadow-sm shadow-slate-900/40"
-              >
-                {item}
-              </span>
+          
+          <div className="mt-4 flex flex-col gap-6">
+            {stack.map((group) => (
+              <div key={group.category} className="flex flex-col gap-3">
+                <p className="text-xs font-bold uppercase tracking-widest text-sky-400">
+                  {group.category}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-sky-100 shadow-sm shadow-slate-900/40 backdrop-blur-md"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -54,7 +77,7 @@ const About = () => {
             className="mx-auto mb-4 h-48 w-48 rounded-full border-4 border-sky-400/60 object-cover shadow-[0_15px_50px_-30px_rgba(56,189,248,0.7)]"
           />
           <h3 className="text-xl font-extrabold text-slate-50">Esteban Vargas</h3>
-          <p className="font-semibold text-sky-200">Frontend Developer</p>
+          <p className="font-semibold text-sky-200">Full Stack Engineer</p>
 
           <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 

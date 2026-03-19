@@ -1,5 +1,7 @@
 import React from "react";
 import { ThreeDCardDemo } from "../test.jsx";
+import milla99 from "../assets/milla99.png";
+import lucida from "../assets/lucida.png";
 import mindSasBic from "../assets/MIND-SAS-BIC.png";
 import portfolio from "../assets/portfolio.png";
 import envios99 from "../assets/99envios.png";
@@ -46,7 +48,33 @@ function generateProjectSchema(project) {
 function Projects() {
   const projects = [
     {
-      title: "MIND SAS BIC",
+      title: "Milla 99 — Mobility & Price Negotiation App",
+      description:
+        "Disruptive ride-sharing app where passengers and drivers negotiate trip prices in real-time. As Tech Lead Front, I implemented real-time geolocation with Google Maps, negotiation logic via sockets, and highly optimized global state management (Zustand) for high concurrency.",
+      image: milla99,
+      projectLink: "https://play.google.com/store/apps/details?id=com.envios99.milla99",
+      codeLink: null,
+      codePublic: false,
+      tags: ["React Native", "Zustand", "Socket.io", "Google Maps", "Firebase"],
+      icon: "mobile",
+      schemaType: "SoftwareSourceCode",
+      company: "Milla 99 / 99 Envios",
+    },
+    {
+      title: "Lucida — Smart Financial AI Companion",
+      description:
+        "An AI-powered personal finance ecosystem featuring a React Native mobile app and a Deno 2.0 backend. Implemented Google Play/Cloud services for subscriptions and Social Auth, using a shared 'Entity' architectural pattern for high data integrity and scalability.",
+      image: lucida,
+      projectLink: "https://play.google.com/store/apps/details?id=com.lucida.lucida",
+      codeLink: null,
+      codePublic: false,
+      tags: ["React Native", "Deno 2", "TypeScript", "PostgreSQL", "Firebase", "Play Console", "Cloud Console"],
+      icon: "mobile",
+      schemaType: "SoftwareSourceCode",
+      company: "Esteban Vargas",
+    },
+    {
+      title: "MIND SAS BIC — Engineering & Industrial Infrastructure",
       description:
         "Corporate website for MIND SAS BIC featuring multiple sections such as landing page, company overview, services, design, quality policy, projects, and contact. Frontend developed collaboratively using React.",
       image: mindSasBic,
@@ -59,7 +87,7 @@ function Projects() {
       company: "MIND SAS BIC",
     },
     {
-      title: "Portfolio Website",
+      title: "Portfolio — High-Fidelity Full Stack Showcase",
       description:
         "Personal portfolio built with React and Tailwind CSS, featuring animated UI components, modern interactions, and SEO-friendly structure to showcase projects and skills.",
       image: portfolio,
@@ -71,7 +99,7 @@ function Projects() {
       schemaType: "SoftwareSourceCode",
     },
     {
-      title: "99 Envios",
+      title: "99 Envios — Logistics & Corporate Delivery Landing",
       description:
         "Corporate landing page for 99 Envios with multiple informational sections. Frontend architecture, SEO implementation, and integration with internal APIs provided by the company’s backend team. Source code is private due to company policy.",
       image: envios99,
