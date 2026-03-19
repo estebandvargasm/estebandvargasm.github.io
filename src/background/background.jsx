@@ -18,7 +18,7 @@ export function BackgroundRippleEffectDemo() {
         <div className="relative z-10 flex flex-col gap-6">
           <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-sky-100 shadow-[0_10px_50px_-20px_rgba(59,130,246,0.8)] backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-sky-400" />
-            Frontend Developer
+            Full Stack Engineer
           </div>
 
           <h1 className="text-4xl font-extrabold leading-tight text-slate-100 sm:text-5xl lg:text-6xl xl:text-7xl">
@@ -26,7 +26,7 @@ export function BackgroundRippleEffectDemo() {
           </h1>
 
           <p className="max-w-2xl text-lg text-slate-200/90 sm:text-xl">
-            Building digital experiences that blend <span className="text-sky-300 font-semibold"> clean code </span> with <span className="text-sky-300 font-semibold"> stunning aesthetics. </span>
+            Building digital experiences that blend <span className="text-sky-300 font-semibold"> scalable architectures </span> with <span className="text-sky-300 font-semibold"> stunning aesthetics. </span>
           </p>
 
           <div className="flex flex-wrap gap-4">
