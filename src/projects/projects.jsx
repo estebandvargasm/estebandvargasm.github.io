@@ -5,6 +5,7 @@ import lucida from "../assets/lucida.png";
 import mindSasBic from "../assets/MIND-SAS-BIC.png";
 import portfolio from "../assets/portfolio.png";
 import envios99 from "../assets/99envios.png";
+import vinos from "../assets/vinos.png";
 
 function generateProjectSchema(project) {
   const baseSchema = {
@@ -91,7 +92,7 @@ function Projects() {
       description:
         "Personal portfolio built with React and Tailwind CSS, featuring animated UI components, modern interactions, and SEO-friendly structure to showcase projects and skills.",
       image: portfolio,
-      projectLink: "https://estebandvargasm.github.io/portfolio/",
+      projectLink: "https://estebandvargasm.github.io/",
       codeLink: "https://github.com/estebandvargasm/portfolio",
       codePublic: true,
       tags: ["React", "JavaScript", "Tailwind"],
@@ -110,6 +111,19 @@ function Projects() {
       icon: "web",
       schemaType: "WebSite",
       company: "99 Envios",
+    },
+    {
+      title: "La Vinoteca by Diego — Wine Catalog & Admin Platform",
+      description:
+        "Curated wine shop in Bogotá with a public catalog of red, white, rosé and sparkling wines, plus a private admin panel for managing inventory, costs, margins and stock. Full stack with server-side rendering, Drizzle ORM on PostgreSQL, NextAuth authentication with rate limiting, and image uploads to Vercel Blob.",
+      image: vinos,
+      projectLink: "https://www.lavinotecabydiego.com",
+      codeLink: null,
+      codePublic: false,
+      tags: ["Next.js", "React", "Tailwind", "PostgreSQL", "Drizzle ORM", "NextAuth", "Zod", "Vercel"],
+      icon: "web",
+      schemaType: "SoftwareSourceCode",
+      company: "La Vinoteca by Diego",
     },
   ];
 

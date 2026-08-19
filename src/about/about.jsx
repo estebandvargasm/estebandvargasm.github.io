@@ -12,15 +12,15 @@ const About = () => {
   const stack = [
     {
       category: "Frontend & Mobile",
-      items: ["React Native", "React.js", "TypeScript", "JavaScript", "Tailwind", "Zustand", "Socket.io", "SEO"],
+      items: ["React Native", "React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind", "Zustand", "Socket.io", "SEO"],
     },
     {
       category: "Backend & Database",
-      items: ["Deno 2", "Node.js", "Hono", "PostgreSQL", "JWT"],
+      items: ["Deno 2", "Node.js", "Hono", "PostgreSQL", "Drizzle ORM", "Zod", "NextAuth", "JWT"],
     },
     {
       category: "DevOps & Cloud",
-      items: ["Firebase", "Google Maps API", "Play Console", "Cloud Console", "Docker", "Git"],
+      items: ["Firebase", "Google Maps API", "Play Console", "Cloud Console", "Docker", "Git", "Vercel"],
     },
   ];
 
