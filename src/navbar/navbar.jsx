@@ -102,6 +102,16 @@ export function FloatingDockDemo() {
         <IconMail className="h-full w-full" />
       ),
       href: "mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20incre%C3%ADble%21",
+      onClick: () => {
+        const mail = "mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20incre%C3%ADble%21";
+        const webmail = "https://outlook.live.com/mail/0/deeplink/compose?to=estebandvargasm@outlook.com&subject=Creemos%20algo%20incre%C3%ADble%21";
+        window.location.href = mail;
+        setTimeout(() => {
+          if (!document.hidden) {
+            window.open(webmail, "_blank", "noopener,noreferrer");
+          }
+        }, 1000);
+      },
     },
   ];
   return (
