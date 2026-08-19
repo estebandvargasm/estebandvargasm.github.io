@@ -23,26 +23,21 @@ export function FloatingDockDemo() {
 
   useEffect(() => {
     const sectionIds = ["home", "about", "projects", "case-studies"];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0,
-        rootMargin: "-30% 0px -65% 0px",
-      }
-    );
+    const onScroll = () => {
+      const offset = window.innerHeight * 0.3;
+      let current = "home";
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          current = id;
+        }
+      });
+      setActiveSection(current);
+    };
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const links = [
