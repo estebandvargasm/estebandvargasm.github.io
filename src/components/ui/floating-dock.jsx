@@ -58,7 +58,7 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
-  const isExternal = href && (href.startsWith("http") || href.startsWith("mailto:"));
+  const isExternal = href && href.startsWith("http");
   const handleClick = (event) => {
     if (onClick) {
       event.preventDefault();

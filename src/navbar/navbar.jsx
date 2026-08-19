@@ -7,6 +7,7 @@ import {
   IconTerminal2,
   IconBrandLinkedin,
   IconBrandGithub,
+  IconBulb,
 } from "@tabler/icons-react";
 
 export function FloatingDockDemo() {
@@ -21,7 +22,7 @@ export function FloatingDockDemo() {
   };
 
   useEffect(() => {
-    const sectionIds = ["home", "about", "projects"];
+    const sectionIds = ["home", "about", "projects", "case-studies"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -73,6 +74,15 @@ export function FloatingDockDemo() {
       isActive: activeSection === "projects",
     },
     {
+      title: "Case Studies",
+      icon: (
+        <IconBulb className="h-full w-full" />
+      ),
+      href: "#case-studies",
+      onClick: () => scrollToId("case-studies"),
+      isActive: activeSection === "case-studies",
+    },
+    {
       title: "LinkedIn",
       icon: (
         <IconBrandLinkedin className="h-full w-full" />
@@ -91,7 +101,7 @@ export function FloatingDockDemo() {
       icon: (
         <IconMail className="h-full w-full" />
       ),
-      href: "mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20increíble!",
+      href: "mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20incre%C3%ADble%21",
     },
   ];
   return (
