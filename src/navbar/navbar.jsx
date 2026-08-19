@@ -32,8 +32,8 @@ export function FloatingDockDemo() {
         });
       },
       {
-        threshold: 0.15, // Reduced from 0.35 to support taller sections
-        rootMargin: "-10% 0px -10% 0px", // Adds a small margin to trigger closer to the center
+        threshold: 0,
+        rootMargin: "-30% 0px -65% 0px",
       }
     );
 
