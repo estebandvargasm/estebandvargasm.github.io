@@ -105,10 +105,13 @@ export function FloatingDockDemo() {
       onClick: () => {
         const mail = "mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20incre%C3%ADble%21";
         const webmail = "https://outlook.live.com/mail/0/deeplink/compose?to=estebandvargasm@outlook.com&subject=Creemos%20algo%20incre%C3%ADble%21";
+        const fallbackTab = window.open("", "_blank");
         window.location.href = mail;
         setTimeout(() => {
-          if (!document.hidden) {
-            window.open(webmail, "_blank", "noopener,noreferrer");
+          if (document.hidden) {
+            fallbackTab.close();
+          } else {
+            fallbackTab.location.href = webmail;
           }
         }, 1000);
       },
