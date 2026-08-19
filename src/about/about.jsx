@@ -1,22 +1,23 @@
 import React from "react";
 import { IconCode, IconBriefcase } from "@tabler/icons-react";
 import estebanPerfil from "../assets/esteban-perfil.png";
+import { projects, technologies } from "../projects/projects-data.js";
 
 const About = () => {
 
   const stats = [
-    { label: "Projects", value: "5+" },
-    { label: "Technologies", value: "15+" },
+    { label: "Projects", value: `${projects.length}+` },
+    { label: "Technologies", value: `${technologies.length}+` },
   ];
 
   const stack = [
     {
       category: "Frontend & Mobile",
-      items: ["React Native", "React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind", "Zustand", "Socket.io", "SEO"],
+      items: ["React Native", "React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind", "Material UI", "Zustand", "Socket.io", "SEO"],
     },
     {
       category: "Backend & Database",
-      items: ["Deno 2", "Node.js", "Hono", "PostgreSQL", "Drizzle ORM", "Zod", "NextAuth", "JWT"],
+      items: ["Deno 2", "Node.js", "Laravel", "PHP", "Hono", "PostgreSQL", "MySQL", "Drizzle ORM", "Zod", "NextAuth", "JWT"],
     },
     {
       category: "DevOps & Cloud",
