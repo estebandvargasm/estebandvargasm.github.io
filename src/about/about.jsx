@@ -1,12 +1,39 @@
-import React from "react";
-import estebanPerfil from "../assets/esteban-perfil.png";
+import React, { useEffect, useRef } from "react";
+import { animate, useInView } from "motion/react";
+import Reveal from "../components/ui/reveal";
+import estebanPerfil from "../assets/esteban-perfil.webp";
 import { projects, technologies } from "../projects/projects-data.js";
+
+function CountUp({ value, suffix = "" }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, value, {
+      duration: 1.2,
+      ease: "easeOut",
+      onUpdate: (latest) => {
+        if (ref.current) {
+          ref.current.textContent = `${Math.round(latest)}${suffix}`;
+        }
+      },
+    });
+    return () => controls.stop();
+  }, [inView, value, suffix]);
+
+  return (
+    <span ref={ref}>
+      0{suffix}
+    </span>
+  );
+}
 
 const About = () => {
 
   const stats = [
-    { label: "Projects", value: `${projects.length}+` },
-    { label: "Technologies", value: `${technologies.length}+` },
+    { label: "Projects", value: projects.length, suffix: "+" },
+    { label: "Technologies", value: technologies.length, suffix: "+" },
   ];
 
   const stack = [
@@ -35,7 +62,8 @@ const About = () => {
       />
 
       <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="flex flex-col gap-5">
+        <Reveal>
+          <div className="flex flex-col gap-5">
           <p className="inline-block w-fit border-b-4 border-sky-500 pb-2 text-2xl font-extrabold text-slate-50">
             About Me
           </p>
@@ -69,11 +97,15 @@ const About = () => {
             ))}
           </div>
         </div>
+        </Reveal>
 
-        <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-sky-500/15 via-indigo-500/10 to-transparent p-8 text-center shadow-[0_25px_70px_-40px_rgba(56,189,248,0.6)] backdrop-blur-xl">
+        <Reveal delay={0.15}>
+          <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-sky-500/15 via-indigo-500/10 to-transparent p-8 text-center shadow-[0_25px_70px_-40px_rgba(56,189,248,0.6)] backdrop-blur-xl">
           <img
             src={estebanPerfil}
             alt="Esteban Vargas"
+            loading="lazy"
+            decoding="async"
             className="mx-auto mb-4 h-48 w-48 rounded-full border-4 border-sky-400/60 object-cover shadow-[0_15px_50px_-30px_rgba(56,189,248,0.7)]"
           />
           <h3 className="text-xl font-extrabold text-slate-50">Esteban Vargas</h3>
@@ -87,7 +119,9 @@ const About = () => {
                 key={stat.label}
                 className="rounded-xl border border-white/10 bg-white/5 px-4 py-3"
               >
-                <p className="text-2xl font-extrabold text-slate-50">{stat.value}</p>
+                <p className="text-2xl font-extrabold text-slate-50">
+                  <CountUp value={stat.value} suffix={stat.suffix} />
+                </p>
                 <p className="text-sm text-slate-400">{stat.label}</p>
               </div>
             ))}
@@ -98,6 +132,7 @@ const About = () => {
             
           </div>*/}
         </div>
+        </Reveal>
       </div>
     </section>
   );

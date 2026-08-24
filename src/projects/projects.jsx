@@ -1,5 +1,6 @@
 import React from "react";
 import { ThreeDCardDemo } from "./three-d-card.jsx";
+import Reveal from "../components/ui/reveal";
 import { projects } from "./projects-data.js";
 
 function generateProjectSchema(project) {
@@ -62,22 +63,26 @@ function Projects() {
         aria-labelledby="projects-title"
       >
         <div className="mx-auto max-w-6xl text-center">
-          <h2
-            id="projects-title"
-            className="text-3xl font-extrabold text-slate-50 sm:text-4xl"
-          >
-            Projects
-          </h2>
+          <Reveal>
+            <h2
+              id="projects-title"
+              className="text-3xl font-extrabold text-slate-50 sm:text-4xl"
+            >
+              Projects
+            </h2>
 
-          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-300">
-            A selection of personal and professional projects that demonstrate my
-            experience working with modern frontend technologies, collaboration,
-            SEO, and real-world product constraints.
-          </p>
+            <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-300">
+              A selection of personal and professional projects that demonstrate my
+              experience working with modern frontend technologies, collaboration,
+              SEO, and real-world product constraints.
+            </p>
+          </Reveal>
 
           <div className="mt-10 grid gap-8 md:grid-cols-2">
-            {projects.map((project) => (
-              <ThreeDCardDemo key={project.title} {...project} />
+            {projects.map((project, i) => (
+              <Reveal key={project.title} delay={i * 0.06}>
+                <ThreeDCardDemo {...project} />
+              </Reveal>
             ))}
           </div>
         </div>

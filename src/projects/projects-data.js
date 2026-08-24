@@ -1,9 +1,9 @@
-import milla99 from "../assets/milla99.png";
-import lucida from "../assets/lucida.png";
-import mindSasBic from "../assets/MIND-SAS-BIC.png";
-import portfolio from "../assets/portfolio.png";
-import envios99 from "../assets/ultima-milla.png";
-import vinos from "../assets/vinos.png";
+import milla99 from "../assets/milla99.webp";
+import lucida from "../assets/lucida.webp";
+import mindSasBic from "../assets/MIND-SAS-BIC.webp";
+import portfolio from "../assets/portfolio.webp";
+import envios99 from "../assets/ultima-milla.webp";
+import vinos from "../assets/vinos.webp";
 
 export const projects = [
   {

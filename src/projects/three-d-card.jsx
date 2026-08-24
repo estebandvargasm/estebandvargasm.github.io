@@ -31,6 +31,8 @@ export function ThreeDCardDemo({
                 src={image}
                 height={800}
                 width={1200}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-700 md:group-hover/card:scale-110"
                 alt={title}
               />
