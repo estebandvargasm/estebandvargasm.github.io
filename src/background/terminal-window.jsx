@@ -1,4 +1,5 @@
 import React from "react";
+import { topTechnologies } from "../projects/projects-data.js";
 
 const K = "text-fuchsia-400";
 const V = "text-sky-300";
@@ -7,11 +8,23 @@ const B = "text-amber-300";
 const P = "text-slate-300";
 const C = "text-slate-500";
 
+const stackTokens = [
+  [V, "stack"],
+  [P, ":"],
+  " ",
+  [P, "["],
+  ...topTechnologies.flatMap((t, i) => [
+    ...(i > 0 ? [" ", [P, ","]] : []),
+    [S, `"${t}"`],
+  ]),
+  [P, "],"],
+];
+
 const lines = [
   { n: "01", tokens: [[K, "const"], " ", [V, "developer"], " ", [P, "="], " ", [P, "{"]] },
   { n: "02", indent: 2, tokens: [[V, "name"], [P, ":"], " ", [S, '"Esteban Vargas"'], [P, ","]] },
   { n: "03", indent: 2, tokens: [[V, "role"], [P, ":"], " ", [S, '"Full Stack Engineer"'], [P, ","]] },
-  { n: "04", indent: 2, tokens: [[V, "stack"], [P, ":"], " ", [P, "["], [S, '"React Native"'], [P, ","], " ", [S, '"Deno 2"'], [P, ","], " ", [S, '"PostgreSQL"'], [P, "],"],] },
+  { n: "04", indent: 2, tokens: stackTokens },
   { n: "05", indent: 2, tokens: [[V, "scalable"], [P, ":"], " ", [B, "true"], [P, ","]] },
   { n: "06", indent: 2, tokens: [[V, "availableForWork"], [P, ":"], " ", [B, "true"], [P, ","]] },
   { n: "07", tokens: [[P, "};"]] },

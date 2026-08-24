@@ -115,3 +115,15 @@ export const projects = [
 ];
 
 export const technologies = [...new Set(projects.flatMap((project) => project.tags))];
+
+const tagFrequency = projects.reduce((acc, project) => {
+  project.tags.forEach((tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+  });
+  return acc;
+}, {});
+
+export const topTechnologies = Object.entries(tagFrequency)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 5)
+  .map(([tag]) => tag);
