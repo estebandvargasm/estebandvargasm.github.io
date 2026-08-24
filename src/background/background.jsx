@@ -38,7 +38,7 @@ export function BackgroundRippleEffectDemo() {
               href={CVPdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="pointer-events-auto rounded-xl border border-white/15 px-6 py-3 text-base font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/5"
+              className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-sky-100 shadow-[0_10px_50px_-20px_rgba(59,130,246,0.8)] backdrop-blur transition duration-200 hover:-translate-y-0.5 hover:bg-white/10"
             >
               Download CV
             </a>
