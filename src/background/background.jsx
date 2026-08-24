@@ -17,7 +17,7 @@ export function BackgroundRippleEffectDemo() {
 
       <div className="pointer-events-none relative grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="relative z-10 flex flex-col gap-6">
-          <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-sky-100 shadow-[0_10px_50px_-20px_rgba(59,130,246,0.8)] backdrop-blur">
+          <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-slate-900/70 px-4 py-2 text-sm font-semibold text-sky-100 shadow-[0_10px_50px_-20px_rgba(59,130,246,0.8)]">
             <span className="h-2 w-2 rounded-full bg-sky-400" />
             Full Stack Engineer
           </div>
