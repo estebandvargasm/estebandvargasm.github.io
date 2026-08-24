@@ -29,11 +29,6 @@ const About = () => {
       id="about"
       className="relative overflow-hidden px-6 pt-48 pb-24 text-slate-100 sm:px-8"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(59,130,246,0.15),transparent_28%),radial-gradient(circle_at_90%_10%,rgba(99,102,241,0.14),transparent_26%)]"
-      />
-
       <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="flex flex-col gap-5">
           <p className="inline-block w-fit border-b-4 border-sky-500 pb-2 text-2xl font-extrabold text-slate-50">
