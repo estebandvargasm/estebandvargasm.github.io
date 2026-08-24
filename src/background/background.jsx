@@ -27,7 +27,7 @@ export function BackgroundRippleEffectDemo() {
           </h1>
 
           <p className="max-w-2xl text-lg text-slate-200/90 sm:text-xl">
-            Building digital experiences that blend <span className="text-sky-300 font-semibold"> scalable architectures </span> with <span className="text-sky-300 font-semibold"> stunning aesthetics. </span>
+            Building digital experiences that blend <span className="text-gradient-sky font-semibold"> scalable architectures </span> with <span className="text-gradient-sky font-semibold"> stunning aesthetics. </span>
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -49,7 +49,10 @@ export function BackgroundRippleEffectDemo() {
 
           <div className="flex items-center gap-10 pt-4 text-sm text-slate-400">
             <div className="flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
               Available for new projects
             </div>
             <div className="hidden items-center gap-3 sm:flex">

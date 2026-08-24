@@ -30,12 +30,13 @@ const lines = [
   { n: "07", tokens: [[P, "};"]] },
   { n: "08", tokens: [] },
   { n: "09", tokens: [[V, "developer"], [P, "."], [K, "ship"], [P, "()"], [P, ";"], " ", [C, "// 🚀"],] },
+  { n: "10", tokens: [[B, "$"], " ", [S, "npm run ship"], [P, " --watch"]] },
 ];
 
 export default function TerminalWindow() {
   return (
     <div
-      className="animate-float w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#0b1220]/90 shadow-[0_25px_70px_-40px_rgba(56,189,248,0.6)]">
+      className="animate-float w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#0b1220]/90 shadow-[0_25px_70px_-40px_rgba(56,189,248,0.6)] transition-shadow duration-300 hover:shadow-[0_25px_90px_-35px_rgba(56,189,248,0.9)]">
       <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red-400/80" />
         <span className="h-3 w-3 rounded-full bg-amber-400/80" />
@@ -60,6 +61,12 @@ export default function TerminalWindow() {
             </span>
           </div>
         ))}
+        <div className="flex gap-4">
+          <span className="select-none text-right text-slate-600">11</span>
+          <span>
+            <span className="animate-blink inline-block h-4 w-2 translate-y-0.5 bg-sky-400" />
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -1,11 +1,15 @@
 import React from "react";
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconMail, IconArrowUp } from "@tabler/icons-react";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer
       id="footer"
-      className="bg-transparent px-6 pb-12 pt-10 text-slate-300 sm:px-8"
+      className="bg-transparent px-6 pb-28 pt-10 text-slate-300 sm:px-8"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-4 border-t border-white/10 pt-6">
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -43,12 +47,20 @@ const Footer = () => {
             >
               <IconBrandLinkedin className="h-5 w-5" />
             </a>
+            <button
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              title="Back to top"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition hover:-translate-y-0.5 hover:bg-white/10"
+            >
+              <IconArrowUp className="h-5 w-5" />
+            </button>
           </div>
         </div>
 
-        {/*<p className="w-full text-center text-sm text-slate-400">
-          © {new Date().getFullYear()} • Designed and developed with passion.
-        </p>*/}
+        <p className="w-full text-center text-sm text-slate-400">
+          © {new Date().getFullYear()} Esteban Vargas · Built with React, Tailwind CSS and Motion
+        </p>
       </div>
     </footer>
   );

@@ -26,11 +26,11 @@ function CaseStudies() {
 
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           {projects.map((project, i) => (
-            <Reveal key={project.title} delay={i * 0.06}>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left shadow-sm shadow-slate-900/40 backdrop-blur-md">
+            <Reveal key={project.title} delay={i * 0.06} className="h-full">
+              <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-6 text-left shadow-sm shadow-slate-900/40 backdrop-blur-md">
                 <h3 className="text-lg font-bold text-slate-50">{project.title}</h3>
 
-                <ul className="mt-4 flex flex-col gap-3">
+                <ul className="mt-4 flex flex-1 flex-col gap-3">
                   {project.highlights.map((highlight) => (
                     <li key={highlight} className="flex gap-3 text-sm leading-relaxed text-slate-300">
                       <IconBulb className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />

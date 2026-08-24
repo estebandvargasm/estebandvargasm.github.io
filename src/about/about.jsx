@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { animate, useInView } from "motion/react";
+import { animate, useInView, useReducedMotion } from "motion/react";
 import Reveal from "../components/ui/reveal";
 import estebanPerfil from "../assets/esteban-perfil.webp";
 import { projects, technologies } from "../projects/projects-data.js";
@@ -7,8 +7,13 @@ import { projects, technologies } from "../projects/projects-data.js";
 function CountUp({ value, suffix = "" }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (reduceMotion) {
+      if (ref.current) ref.current.textContent = `${value}${suffix}`;
+      return;
+    }
     if (!inView) return;
     const controls = animate(0, value, {
       duration: 1.2,
@@ -20,7 +25,7 @@ function CountUp({ value, suffix = "" }) {
       },
     });
     return () => controls.stop();
-  }, [inView, value, suffix]);
+  }, [inView, value, suffix, reduceMotion]);
 
   return (
     <span ref={ref}>
@@ -35,6 +40,12 @@ const About = () => {
     { label: "Projects", value: projects.length, suffix: "+" },
     { label: "Technologies", value: technologies.length, suffix: "+" },
   ];
+
+  const dotColors = {
+    "Frontend & Mobile": "bg-sky-400",
+    "Backend & Database": "bg-emerald-400",
+    "DevOps & Cloud": "bg-amber-400",
+  };
 
   const stack = [
     {
@@ -87,8 +98,9 @@ const About = () => {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-sky-100 shadow-sm shadow-slate-900/40 backdrop-blur-md"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-sky-100 shadow-sm shadow-slate-900/40 backdrop-blur-md"
                     >
+                      <span className={`h-1.5 w-1.5 rounded-full ${dotColors[group.category]}`} />
                       {item}
                     </span>
                   ))}
@@ -102,12 +114,12 @@ const About = () => {
         <Reveal delay={0.15}>
           <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-sky-500/15 via-indigo-500/10 to-transparent p-8 text-center shadow-[0_25px_70px_-40px_rgba(56,189,248,0.6)] backdrop-blur-xl">
           <img
-            src={estebanPerfil}
-            alt="Esteban Vargas"
-            loading="lazy"
-            decoding="async"
-            className="mx-auto mb-4 h-48 w-48 rounded-full border-4 border-sky-400/60 object-cover shadow-[0_15px_50px_-30px_rgba(56,189,248,0.7)]"
-          />
+              src={estebanPerfil}
+              alt="Esteban Vargas"
+              loading="lazy"
+              decoding="async"
+              className="mx-auto mb-4 h-48 w-48 rounded-full border-4 border-sky-400/60 object-cover shadow-[0_15px_50px_-30px_rgba(56,189,248,0.7)]"
+            />
           <h3 className="text-xl font-extrabold text-slate-50">Esteban Vargas</h3>
           <p className="font-semibold text-sky-200">Full Stack Engineer</p>
 

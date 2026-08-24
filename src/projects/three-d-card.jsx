@@ -22,7 +22,7 @@ export function ThreeDCardDemo({
 
   return (
     <CardContainer className="inter-var">
-      <CardBody className="relative group/card rounded-2xl border border-white/10 bg-white/5 p-0 shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)] overflow-hidden min-h-[640px] flex flex-col">
+      <CardBody className="relative group/card rounded-2xl border border-white/10 bg-white/5 p-0 shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)] transition-shadow duration-300 overflow-hidden min-h-[640px] flex flex-col group-hover/card:border-sky-400/30 group-hover/card:shadow-[0_30px_100px_-40px_rgba(56,189,248,0.85)]">
         <div className="flex flex-1 w-full flex-col">
           {/* IMAGE */}
           <CardItem translateZ={80} className="relative">
