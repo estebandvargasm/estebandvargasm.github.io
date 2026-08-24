@@ -14,7 +14,7 @@ export function BackgroundRippleEffectDemo() {
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0f172a]/70 via-[#020617]/94 to-[#020617]" />
 
-      <div className="relative grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="pointer-events-none relative grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="relative z-10 flex flex-col gap-6">
           <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-sky-100 shadow-[0_10px_50px_-20px_rgba(59,130,246,0.8)] backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-sky-400" />
@@ -32,7 +32,7 @@ export function BackgroundRippleEffectDemo() {
           <div className="flex flex-wrap gap-4">
             <a
               href="mailto:estebandvargasm@outlook.com?subject=Creemos%20algo%20incre%C3%ADble!"
-              className="rounded-xl bg-sky-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/30 transition duration-200 hover:-translate-y-0.5 hover:bg-sky-400"
+              className="pointer-events-auto rounded-xl bg-sky-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/30 transition duration-200 hover:-translate-y-0.5 hover:bg-sky-400"
             >
               Contact Me
             </a>
@@ -40,7 +40,7 @@ export function BackgroundRippleEffectDemo() {
               href={CVPdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-white/15 px-6 py-3 text-base font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/5"
+              className="pointer-events-auto rounded-xl border border-white/15 px-6 py-3 text-base font-semibold text-slate-100 transition duration-200 hover:-translate-y-0.5 hover:bg-white/5"
             >
               Download CV
             </a>
