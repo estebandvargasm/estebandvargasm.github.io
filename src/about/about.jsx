@@ -1,5 +1,4 @@
 import React from "react";
-import { IconCode, IconBriefcase } from "@tabler/icons-react";
 import estebanPerfil from "../assets/esteban-perfil.png";
 import { projects, technologies } from "../projects/projects-data.js";
 

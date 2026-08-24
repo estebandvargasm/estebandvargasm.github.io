@@ -1,13 +1,6 @@
 import { cn } from "../../utils/cn";
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useRef,
-  useEffect,
-} from "react";
-
-const MouseEnterContext = createContext(undefined);
+import { MouseEnterContext, useMediaQuery, useMouseEnter } from "../../utils/hooks";
+import React, { useState, useRef, useEffect } from "react";
 
 export const CardContainer = ({
   children,
@@ -16,7 +9,7 @@ export const CardContainer = ({
 }) => {
   const containerRef = useRef(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
-  const isFinePointer = useIsFinePointer();
+  const isFinePointer = useMediaQuery("(pointer: fine)", true);
 
   const handleMouseMove = (e) => {
     if (!isFinePointer) return;
@@ -28,13 +21,12 @@ export const CardContainer = ({
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = () => {
     if (!isFinePointer) return;
     setIsMouseEntered(true);
-    if (!containerRef.current) return;
   };
 
-  const handleMouseLeave = (e) => {
+  const handleMouseLeave = () => {
     if (!containerRef.current) return;
     if (!isFinePointer) return;
     setIsMouseEntered(false);
@@ -86,6 +78,7 @@ export const CardBody = ({
 };
 
 export const CardItem = ({
+  // eslint-disable-next-line no-unused-vars -- Tag is rendered as the dynamic JSX element below
   as: Tag = "div",
   children,
   className,
@@ -101,17 +94,11 @@ export const CardItem = ({
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
-    handleAnimations();
-  }, [isMouseEntered]);
-
-  const handleAnimations = () => {
     if (!ref.current) return;
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
-    }
-  };
+    ref.current.style.transform = isMouseEntered
+      ? `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
+      : `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+  }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
   return (
     <Tag
@@ -123,27 +110,3 @@ export const CardItem = ({
     </Tag>
   );
 };
-
-// Create a hook to use the context
-export const useMouseEnter = () => {
-  const context = useContext(MouseEnterContext);
-  if (context === undefined) {
-    throw new Error("useMouseEnter must be used within a MouseEnterProvider");
-  }
-  return context;
-};
-
-function useIsFinePointer() {
-  const [fine, setFine] = useState(true);
-
-  useEffect(() => {
-    if (typeof window === "undefined" || !window.matchMedia) return;
-    const mql = window.matchMedia("(pointer: fine)");
-    const update = () => setFine(mql.matches);
-    update();
-    mql.addEventListener("change", update);
-    return () => mql.removeEventListener("change", update);
-  }, []);
-
-  return fine;
-}

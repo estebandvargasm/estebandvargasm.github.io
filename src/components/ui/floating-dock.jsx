@@ -1,6 +1,8 @@
 import { cn } from "../../utils/cn";
+import { useMediaQuery } from "../../utils/hooks";
+// eslint-disable-next-line no-unused-vars -- `motion` is used as the <motion.div> JSX member expression below
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export const FloatingDock = ({
   items,
@@ -14,7 +16,7 @@ const FloatingDockDesktop = ({
   className
 }) => {
   const mouseX = useMotionValue(Infinity);
-  const isFinePointer = useIsFinePointer();
+  const isFinePointer = useMediaQuery("(pointer: fine)", true);
   return (
     <motion.div
       onMouseMove={isFinePointer ? (e) => mouseX.set(e.pageX) : undefined}
@@ -39,7 +41,7 @@ function IconContainer({
   isActive = false
 }) {
   const ref = useRef(null);
-  const isFinePointer = useIsFinePointer();
+  const isFinePointer = useMediaQuery("(pointer: fine)", true);
 
   const distance = useTransform(mouseX, val => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -102,19 +104,4 @@ function IconContainer({
       </motion.div>
     </a>
   );
-}
-
-function useIsFinePointer() {
-  const [fine, setFine] = useState(true);
-
-  useEffect(() => {
-    if (typeof window === "undefined" || !window.matchMedia) return;
-    const mql = window.matchMedia("(pointer: fine)");
-    const update = () => setFine(mql.matches);
-    update();
-    mql.addEventListener("change", update);
-    return () => mql.removeEventListener("change", update);
-  }, []);
-
-  return fine;
 }

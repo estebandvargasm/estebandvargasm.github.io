@@ -1,5 +1,5 @@
 import React from "react";
-import { ThreeDCardDemo } from "../test.jsx";
+import { ThreeDCardDemo } from "./three-d-card.jsx";
 import { projects } from "./projects-data.js";
 
 function generateProjectSchema(project) {

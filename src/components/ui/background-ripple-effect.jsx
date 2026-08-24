@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState } from "react";
 import { cn } from "../../utils/cn";
+import { useMediaQuery } from "../../utils/hooks";
 
 export const BackgroundRippleEffect = ({
   rows = 20,
@@ -9,6 +10,10 @@ export const BackgroundRippleEffect = ({
   const [clickedCell, setClickedCell] = useState(null);
   const [rippleKey, setRippleKey] = useState(0);
   const ref = useRef(null);
+  const isMobile = useMediaQuery("(max-width: 640px)");
+
+  const effectiveRows = isMobile ? Math.min(rows, 10) : rows;
+  const effectiveCols = isMobile ? Math.min(cols, 12) : cols;
 
   return (
     <div
@@ -24,8 +29,8 @@ export const BackgroundRippleEffect = ({
         <DivGrid
           key={`base-${rippleKey}`}
           className="mask-radial-from-20% mask-radial-at-top opacity-600"
-          rows={rows}
-          cols={cols}
+          rows={effectiveRows}
+          cols={effectiveCols}
           cellSize={cellSize}
           borderColor="var(--cell-border-color)"
           fillColor="var(--cell-fill-color)"

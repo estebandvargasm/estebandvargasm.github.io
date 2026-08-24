@@ -11,7 +11,7 @@ Live site: https://estebandvargasm.github.io
 | Framework | React 19 (Vite) |
 | UI | Tailwind CSS, Motion (animaciones), @tabler/icons-react |
 | Estilos | PostCSS + Autoprefixer |
-| Deploy | GitHub Actions → GitHub Pages (`gh-pages`) |
+| Deploy | GitHub Actions → GitHub Pages (`pnpm` + `peaceiris/actions-gh-pages`) |
 
 ## Features
 
@@ -37,11 +37,11 @@ src/
 ## Local
 
 ```bash
-npm install
-npm run dev      # Dev server
-npm run build    # Build producción (dist/)
-npm run preview  # Previsualizar build
-npm run lint     # ESLint
+pnpm install
+pnpm dev       # Dev server
+pnpm build     # Build producción (dist/)
+pnpm preview   # Previsualizar build
+pnpm lint      # ESLint
 ```
 
 ## Deploy
