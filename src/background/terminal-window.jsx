@@ -1,6 +1,4 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars -- `motion` is used as the <motion.div> JSX member expression below
-import { motion } from "motion/react";
 
 const K = "text-fuchsia-400";
 const V = "text-sky-300";
@@ -23,11 +21,7 @@ const lines = [
 
 export default function TerminalWindow() {
   return (
-    <motion.div
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#0b1220]/70 shadow-[0_25px_70px_-40px_rgba(56,189,248,0.6)] backdrop-blur-xl"
-    >
+    <div className="w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#0b1220]/70 shadow-[0_25px_70px_-40px_rgba(56,189,248,0.6)] backdrop-blur-xl">
       <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red-400/80" />
         <span className="h-3 w-3 rounded-full bg-amber-400/80" />
@@ -53,6 +47,6 @@ export default function TerminalWindow() {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
