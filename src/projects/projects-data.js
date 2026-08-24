@@ -123,7 +123,23 @@ const tagFrequency = projects.reduce((acc, project) => {
   return acc;
 }, {});
 
-export const topTechnologies = Object.entries(tagFrequency)
+const frameworkNames = new Set([
+  "React",
+  "React Native",
+  "Next.js",
+  "Vue",
+  "Angular",
+  "Svelte",
+  "Laravel",
+  "Django",
+  "Express",
+  "NestJS",
+  "Hono",
+  "Tailwind",
+  "Bootstrap",
+]);
+
+export const frameworks = Object.entries(tagFrequency)
+  .filter(([tag]) => frameworkNames.has(tag))
   .sort((a, b) => b[1] - a[1])
-  .slice(0, 5)
   .map(([tag]) => tag);

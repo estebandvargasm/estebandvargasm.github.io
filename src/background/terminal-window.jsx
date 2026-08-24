@@ -1,5 +1,5 @@
 import React from "react";
-import { topTechnologies } from "../projects/projects-data.js";
+import { frameworks } from "../projects/projects-data.js";
 
 const K = "text-fuchsia-400";
 const V = "text-sky-300";
@@ -13,7 +13,7 @@ const stackTokens = [
   [P, ":"],
   " ",
   [P, "["],
-  ...topTechnologies.flatMap((t, i) => [
+  ...frameworks.flatMap((t, i) => [
     ...(i > 0 ? [" ", [P, ","]] : []),
     [S, `"${t}"`],
   ]),
