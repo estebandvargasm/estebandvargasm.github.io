@@ -31,7 +31,7 @@ const About = () => {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(59,130,246,0.08),transparent_28%),radial-gradient(circle_at_90%_10%,rgba(99,102,241,0.07),transparent_26%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(59,130,246,0.15),transparent_28%),radial-gradient(circle_at_90%_10%,rgba(99,102,241,0.14),transparent_26%)]"
       />
 
       <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
