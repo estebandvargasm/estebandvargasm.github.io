@@ -34,7 +34,7 @@ export function ThreeDCardDemo({
                 className="h-full w-full object-cover transition-transform duration-700 md:group-hover/card:scale-110"
                 alt={title}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-[#020617]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220]/90 via-[#0b1220]/30 to-transparent" />
               <div className="absolute top-4 right-4 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
                 <BadgeIcon className="h-5 w-5 text-slate-200" />
               </div>
