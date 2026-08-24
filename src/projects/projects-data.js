@@ -84,7 +84,7 @@ export const projects = [
     projectLink: "https://99envios.app/login-top",
     codeLink: null,
     codePublic: false,
-      tags: ["React", "Laravel", "PHP", "MySQL", "Material UI", "Zustand", "Google Maps", "Leaflet"],
+      tags: ["React", "Laravel", "PHP", "MySQL", "Material UI", "Zustand", "Leaflet"],
       icon: "web",
       schemaType: "SoftwareSourceCode",
       company: "99 Envios",
