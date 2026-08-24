@@ -8,11 +8,11 @@ export function BackgroundRippleEffectDemo() {
       id="home"
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 py-12"
     >
-      <div className="absolute inset-0 opacity-35">
+      <div className="absolute inset-0 opacity-50">
         <BackgroundRippleEffect />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b1220]/80 via-[#020617]/94 to-[#020617]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0f172a]/70 via-[#020617]/94 to-[#020617]" />
 
       <div className="relative grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="relative z-10 flex flex-col gap-6">
@@ -61,7 +61,7 @@ export function BackgroundRippleEffectDemo() {
         <div className="relative z-0 hidden lg:block"></div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(59,130,246,0.12),transparent_30%),radial-gradient(ellipse_at_80%_0%,rgba(99,102,241,0.1),transparent_28%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(59,130,246,0.06),transparent_30%),radial-gradient(ellipse_at_80%_0%,rgba(99,102,241,0.05),transparent_28%)]" />
     </header>
   );
 }
