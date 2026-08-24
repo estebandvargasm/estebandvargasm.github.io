@@ -9,11 +9,11 @@ export function BackgroundRippleEffectDemo() {
       id="home"
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 py-12"
     >
-      <div className="absolute inset-0 opacity-35">
+      <div className="absolute inset-0 opacity-55">
         <BackgroundRippleEffect />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b1220]/80 via-[#020617]/94 to-[#020617]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b1220]/40 via-[#020617]/45 to-[#020617]/60" />
 
       <div className="pointer-events-none relative grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="relative z-10 flex flex-col gap-6">
