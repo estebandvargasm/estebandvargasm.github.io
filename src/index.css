@@ -33,6 +33,6 @@ html {
 
 body {
   /* Global background and text color (avoid @apply to prevent PostCSS/Tailwind lint issues) */
-  background-color: #0b1220;
+  background-color: #020617;
   color: #fff;
 }
