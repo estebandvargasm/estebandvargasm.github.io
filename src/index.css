@@ -18,6 +18,19 @@
       opacity: 0.4;
     }
   }
+
+  .mask-radial-at-top {
+    -webkit-mask-image: radial-gradient(
+      ellipse 72% 58% at 50% 24%,
+      #000 30%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 72% 58% at 50% 24%,
+      #000 30%,
+      transparent 100%
+    );
+  }
 }
 
 /* Global page background and text color: ensure entire app is on black background */
