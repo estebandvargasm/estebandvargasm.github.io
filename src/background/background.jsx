@@ -1,5 +1,6 @@
 import React from "react";
 import { BackgroundRippleEffect } from "../components/ui/background-ripple-effect";
+import TerminalWindow from "./terminal-window";
 import CVPdf from "./Esteban Vargas.pdf";
 
 export function BackgroundRippleEffectDemo() {
@@ -56,7 +57,9 @@ export function BackgroundRippleEffectDemo() {
           </div>
         </div>
         
-        <div className="relative z-0 hidden lg:block"></div>
+        <div className="relative z-10 hidden justify-center lg:flex">
+          <TerminalWindow />
+        </div>
       </div>
     </header>
   );
